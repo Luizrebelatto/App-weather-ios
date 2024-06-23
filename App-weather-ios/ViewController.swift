@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         let imageBackground = UIImageView(frame: .zero)
         imageBackground.translatesAutoresizingMaskIntoConstraints = false
         imageBackground.contentMode = .scaleAspectFill
-        imageBackground.image = UIImage(named: "background")
+        imageBackground.image = UIImage.backgroundImage
         return imageBackground
     }()
     
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     private lazy var weatherIcon: UIImageView = {
         let image = UIImageView(frame: .zero)
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "sunIcon")
+        image.image = UIImage.sunIconImage
         image.contentMode = .scaleAspectFit
         return image
     }()

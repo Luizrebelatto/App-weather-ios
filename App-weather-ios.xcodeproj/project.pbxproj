@@ -16,6 +16,7 @@
 		29662C612C224B1E00E5A216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29662C602C224B1E00E5A216 /* Assets.xcassets */; };
 		29662C642C224B1E00E5A216 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 29662C632C224B1E00E5A216 /* Base */; };
 		297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD59D2C2733E00029989A /* UIView+Extension.swift */; };
+		297BD5A12C27B89E0029989A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD5A02C27B89E0029989A /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		29662C632C224B1E00E5A216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29662C652C224B1E00E5A216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		297BD59D2C2733E00029989A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		297BD5A02C27B89E0029989A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				290848902C2608F5005571AC /* Color+Extension.swift */,
 				297BD59D2C2733E00029989A /* UIView+Extension.swift */,
+				297BD5A02C27B89E0029989A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */,
 				290848912C2608F5005571AC /* Color+Extension.swift in Sources */,
 				29662C5C2C224B1C00E5A216 /* ViewController.swift in Sources */,
+				297BD5A12C27B89E0029989A /* UIImage+Extension.swift in Sources */,
 				290848932C26302C005571AC /* DailyForecastTableViewCell.swift in Sources */,
 				29662C582C224B1C00E5A216 /* AppDelegate.swift in Sources */,
 				2908488F2C260033005571AC /* HourlyForecastCollectionViewCell.swift in Sources */,
