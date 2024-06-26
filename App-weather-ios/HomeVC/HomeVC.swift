@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeVC: UIViewController {
     
     private lazy var backgroundView: UIImageView = {
         let imageBackground = UIImageView(frame: .zero)
@@ -253,7 +253,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension HomeVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -265,7 +265,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension HomeVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         10
     }
