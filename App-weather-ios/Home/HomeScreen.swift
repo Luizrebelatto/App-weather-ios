@@ -21,66 +21,8 @@ class HomeScreen: UIView {
         return header
     }()
     
-    private lazy var humidityLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Umidade"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
-        return label
-    }()
-    
-    private lazy var humidityLabelValue: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "1000mm"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
-        return label
-    }()
-    
-    private lazy var humidityStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [humidityLabel, humidityLabelValue])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        return stackView
-    }()
-    
-    private lazy var windLabel: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Vento"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
-        return label
-    }()
-    
-    private lazy var windLabelValue: UILabel = {
-        let label = UILabel(frame: .zero)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "10km/h"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
-        return label
-    }()
-    
-    private lazy var windStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [windLabel, windLabelValue])
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        return stackView
-    }()
-   
     private lazy var statsStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [humidityStackView, windStackView])
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 3
-        stackView.backgroundColor = UIColor.softGrayColor
-        stackView.clipsToBounds = true
-        stackView.layer.cornerRadius = 10
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 12, leading: 24, bottom: 12, trailing: 24)
+        let stackView = CardInfoViewScreen(frame: .zero)
         return stackView
     }()
     
@@ -125,7 +67,7 @@ class HomeScreen: UIView {
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
     }
-    
+        
     private func configConstraints(){
         NSLayoutConstraint.activate([
             backgroundView.topAnchor.constraint(equalTo: topAnchor),

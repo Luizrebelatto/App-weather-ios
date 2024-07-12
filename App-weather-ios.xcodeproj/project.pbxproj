@@ -27,6 +27,7 @@
 		297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD59D2C2733E00029989A /* UIView+Extension.swift */; };
 		297BD5A12C27B89E0029989A /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297BD5A02C27B89E0029989A /* UIImage+Extension.swift */; };
 		29B723AA2C40BE340004ABEA /* HeaderViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B723A92C40BE340004ABEA /* HeaderViewScreen.swift */; };
+		29B723AD2C40C5AD0004ABEA /* CardInfoViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B723AC2C40C5AD0004ABEA /* CardInfoViewScreen.swift */; };
 		29CC182E2C389A78009D5392 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CC182D2C389A78009D5392 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		297BD59D2C2733E00029989A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		297BD5A02C27B89E0029989A /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		29B723A92C40BE340004ABEA /* HeaderViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewScreen.swift; sourceTree = "<group>"; };
+		29B723AC2C40C5AD0004ABEA /* CardInfoViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfoViewScreen.swift; sourceTree = "<group>"; };
 		29CC182D2C389A78009D5392 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 		290F98EC2C2C4F4400064DD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				29B723AB2C40C5910004ABEA /* CardInfo */,
 				29B723A82C40BE080004ABEA /* HeaderView */,
 				290F98ED2C2C4F6200064DD9 /* CollectionViewHourlyForecast */,
 			);
@@ -177,6 +180,14 @@
 			path = HeaderView;
 			sourceTree = "<group>";
 		};
+		29B723AB2C40C5910004ABEA /* CardInfo */ = {
+			isa = PBXGroup;
+			children = (
+				29B723AC2C40C5AD0004ABEA /* CardInfoViewScreen.swift */,
+			);
+			path = CardInfo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -247,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B723AD2C40C5AD0004ABEA /* CardInfoViewScreen.swift in Sources */,
 				290F98EB2C2C4B0F00064DD9 /* DailyForecasts.swift in Sources */,
 				29CC182E2C389A78009D5392 /* HomeViewModel.swift in Sources */,
 				297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */,
