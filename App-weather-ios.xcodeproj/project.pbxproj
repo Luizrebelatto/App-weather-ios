@@ -94,6 +94,7 @@
 		290F98EC2C2C4F4400064DD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				297FFB232C41977B006BF24E /* TableViewDailyForecast */,
 				29B723AB2C40C5910004ABEA /* CardInfo */,
 				29B723A82C40BE080004ABEA /* HeaderView */,
 				290F98ED2C2C4F6200064DD9 /* CollectionViewHourlyForecast */,
@@ -170,6 +171,13 @@
 				297BD5A02C27B89E0029989A /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		297FFB232C41977B006BF24E /* TableViewDailyForecast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewDailyForecast;
 			sourceTree = "<group>";
 		};
 		29B723A82C40BE080004ABEA /* HeaderView */ = {

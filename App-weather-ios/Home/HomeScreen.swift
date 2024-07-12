@@ -49,6 +49,16 @@ class HomeScreen: UIView {
         return collectionView
     }()
     
+    private lazy var dailyForecastLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "PROXIMOS DIAS"
+        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
+        label.textColor = UIColor.lightColor
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setHierarchy()
@@ -70,6 +80,7 @@ class HomeScreen: UIView {
         backgroundView.addSubview(statsStackView)
         backgroundView.addSubview(hourlyForecastLabel)
         addSubview(collectionView)
+        backgroundView.addSubview(dailyForecastLabel)
     }
         
     private func configConstraints(){
@@ -100,10 +111,16 @@ class HomeScreen: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: hourlyForecastLabel.bottomAnchor, constant: 35),
+            collectionView.topAnchor.constraint(equalTo: hourlyForecastLabel.bottomAnchor, constant: 20),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            collectionView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            dailyForecastLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            dailyForecastLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
+            dailyForecastLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35)
         ])
     }
 }
