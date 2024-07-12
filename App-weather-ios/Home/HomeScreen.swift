@@ -51,11 +51,7 @@ class HomeScreen: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(backgroundView)
-        backgroundView.addSubview(headerView)
-        backgroundView.addSubview(statsStackView)
-        backgroundView.addSubview(hourlyForecastLabel)
-        addSubview(collectionView)
+        setHierarchy()
         configConstraints()
     }
     
@@ -66,6 +62,14 @@ class HomeScreen: UIView {
     public func configProtocolsColletionView(delegate: UICollectionViewDelegate, dataSource: UICollectionViewDataSource){
         collectionView.delegate = delegate
         collectionView.dataSource = dataSource
+    }
+    
+    private func setHierarchy() {
+        addSubview(backgroundView)
+        backgroundView.addSubview(headerView)
+        backgroundView.addSubview(statsStackView)
+        backgroundView.addSubview(hourlyForecastLabel)
+        addSubview(collectionView)
     }
         
     private func configConstraints(){
