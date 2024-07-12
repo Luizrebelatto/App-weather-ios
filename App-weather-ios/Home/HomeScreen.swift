@@ -17,11 +17,7 @@ class HomeScreen: UIView {
     }()
     
     private lazy var headerView: UIView = {
-        let header = UIView(frame: .zero)
-        header.translatesAutoresizingMaskIntoConstraints = false
-        header.backgroundColor = UIColor.lightColor
-        header.clipsToBounds = true
-        header.layer.cornerRadius = 20
+        let header = HeaderViewScreen(frame: .zero)
         return header
     }()
     
