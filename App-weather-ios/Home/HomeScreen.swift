@@ -8,14 +8,6 @@
 import UIKit
 
 class HomeScreen: UIView {
-    private lazy var backgroundView: UIImageView = {
-        let imageBackground = UIImageView(frame: .zero)
-        imageBackground.translatesAutoresizingMaskIntoConstraints = false
-        imageBackground.contentMode = .scaleAspectFill
-        imageBackground.image = UIImage.backgroundImage
-        return imageBackground
-    }()
-    
     private lazy var headerView: UIView = {
         let header = HeaderViewScreen(frame: .zero)
         return header
@@ -59,10 +51,20 @@ class HomeScreen: UIView {
         return label
     }()
     
+    private lazy var cityLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Porto Alegre"
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textColor = UIColor.blueDark
+        label.textAlignment = .center
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setHierarchy()
-        configConstraints()
+//        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -75,52 +77,37 @@ class HomeScreen: UIView {
     }
     
     private func setHierarchy() {
-        addSubview(backgroundView)
-        backgroundView.addSubview(headerView)
-        backgroundView.addSubview(statsStackView)
-        backgroundView.addSubview(hourlyForecastLabel)
-        addSubview(collectionView)
-        backgroundView.addSubview(dailyForecastLabel)
+//        addSubview(backgroundView)
+        backgroundColor = .softBlue
+        addSubview(cityLabel)
+        NSLayoutConstraint.activate([
+            cityLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
+            cityLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)
+        ])
+        
+        
+//        backgroundView.addSubview(headerView)
+//        backgroundView.addSubview(statsStackView)
+//        backgroundView.addSubview(hourlyForecastLabel)
+//        addSubview(collectionView)
+//        backgroundView.addSubview(dailyForecastLabel)
     }
         
-    private func configConstraints(){
-        NSLayoutConstraint.activate([
-            backgroundView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
-            headerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -35),
-            headerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 35),
-            headerView.heightAnchor.constraint(equalToConstant: 169)
-        ])
-        
-        NSLayoutConstraint.activate([
-            statsStackView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24),
-            statsStackView.widthAnchor.constraint(equalToConstant: 206),
-            statsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
-            hourlyForecastLabel.topAnchor.constraint(equalTo: statsStackView.bottomAnchor, constant: 29),
-            hourlyForecastLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: -35),
-            hourlyForecastLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 35)
-        ])
-        
-        NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: hourlyForecastLabel.bottomAnchor, constant: 20),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 100)
-        ])
-        
-        NSLayoutConstraint.activate([
-            dailyForecastLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
-            dailyForecastLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 35),
-            dailyForecastLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35)
-        ])
-    }
+//    private func configConstraints(){
+//        
+//        NSLayoutConstraint.activate([
+//            statsStackView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24),
+//            statsStackView.widthAnchor.constraint(equalToConstant: 206),
+//            statsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
+//        ])
+//        
+
+//        
+//        NSLayoutConstraint.activate([
+//            collectionView.topAnchor.constraint(equalTo: hourlyForecastLabel.bottomAnchor, constant: 20),
+//            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            collectionView.heightAnchor.constraint(equalToConstant: 100)
+//        ])
+//
 }
