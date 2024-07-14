@@ -8,24 +8,23 @@
 import UIKit
 
 class HomeScreen: UIView {
-    private lazy var headerView: UIView = {
-        let header = HeaderViewScreen(frame: .zero)
-        return header
-    }()
     
-    private lazy var statsStackView: UIStackView = {
-        let stackView = CardInfoViewScreen(frame: .zero)
-        return stackView
-    }()
-    
-    private lazy var hourlyForecastLabel: UILabel = {
+    private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Previsão Por Hora"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
+        label.text = "Porto Alegre"
+        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+        label.textColor = UIColor.blueDark
         label.textAlignment = .center
         return label
+    }()
+    
+    private lazy var imageWeather: UIView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage.sunIconImage
+        img.contentMode = .scaleAspectFit
+        return img
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -41,30 +40,11 @@ class HomeScreen: UIView {
         return collectionView
     }()
     
-    private lazy var dailyForecastLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "PROXIMOS DIAS"
-        label.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
-        label.textColor = UIColor.lightColor
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private lazy var cityLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Porto Alegre"
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        label.textColor = UIColor.blueDark
-        label.textAlignment = .center
-        return label
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .softBlue
         setHierarchy()
-//        configConstraints()
+        configConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -77,37 +57,21 @@ class HomeScreen: UIView {
     }
     
     private func setHierarchy() {
-//        addSubview(backgroundView)
-        backgroundColor = .softBlue
         addSubview(cityLabel)
+        addSubview(imageWeather)
+    }
+        
+    private func configConstraints(){
         NSLayoutConstraint.activate([
             cityLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
             cityLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)
         ])
         
-        
-//        backgroundView.addSubview(headerView)
-//        backgroundView.addSubview(statsStackView)
-//        backgroundView.addSubview(hourlyForecastLabel)
-//        addSubview(collectionView)
-//        backgroundView.addSubview(dailyForecastLabel)
+        NSLayoutConstraint.activate([
+            imageWeather.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 25),
+            imageWeather.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
+            imageWeather.heightAnchor.constraint(equalToConstant: 200),
+            imageWeather.widthAnchor.constraint(equalToConstant: 200)
+        ])
     }
-        
-//    private func configConstraints(){
-//        
-//        NSLayoutConstraint.activate([
-//            statsStackView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 24),
-//            statsStackView.widthAnchor.constraint(equalToConstant: 206),
-//            statsStackView.centerXAnchor.constraint(equalTo: centerXAnchor)
-//        ])
-//        
-
-//        
-//        NSLayoutConstraint.activate([
-//            collectionView.topAnchor.constraint(equalTo: hourlyForecastLabel.bottomAnchor, constant: 20),
-//            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            collectionView.heightAnchor.constraint(equalToConstant: 100)
-//        ])
-//
 }

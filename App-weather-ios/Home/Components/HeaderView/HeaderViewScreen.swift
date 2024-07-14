@@ -49,7 +49,7 @@ class HeaderViewScreen: UIView {
     
     private func setupView(){
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.backgroundColor = UIColor.lightColor
+        self.backgroundColor = UIColor.blueSoft
         self.clipsToBounds = true
         self.layer.cornerRadius = 20
         
