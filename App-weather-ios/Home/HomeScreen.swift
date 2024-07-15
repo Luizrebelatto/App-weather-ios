@@ -37,6 +37,16 @@ class HomeScreen: UIView {
         return label
     }()
     
+    private lazy var eventWeather: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Storm"
+        label.textColor = UIColor.blueDark
+        label.font = UIFont.systemFont(ofSize: 18)
+        label.textAlignment = .left
+        return label
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -70,6 +80,7 @@ class HomeScreen: UIView {
         addSubview(cityLabel)
         addSubview(imageWeather)
         addSubview(temperatureLabel)
+        addSubview(eventWeather)
     }
         
     private func configConstraints(){
@@ -88,6 +99,11 @@ class HomeScreen: UIView {
         NSLayoutConstraint.activate([
             temperatureLabel.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 25),
             temperatureLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
+        ])
+    
+        NSLayoutConstraint.activate([
+            eventWeather.topAnchor.constraint(equalTo: temperatureLabel.topAnchor),
+            eventWeather.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 20)
         ])
     }
 }
