@@ -81,6 +81,15 @@ class HomeScreen: UIView {
         return collectionView
     }()
     
+    private lazy var chartView: UIView = {
+        let chartsView = UIView()
+        chartsView.translatesAutoresizingMaskIntoConstraints = false
+        chartsView.clipsToBounds = true
+        chartsView.backgroundColor = UIColor.blueDark
+        chartsView.layer.cornerRadius = 20
+        return chartsView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .softBlue
@@ -102,6 +111,7 @@ class HomeScreen: UIView {
         addSubview(imageWeather)
         addSubview(temperatureLabel)
         addSubview(infoStackView)
+        addSubview(chartView)
     }
         
     private func configConstraints(){
@@ -125,6 +135,14 @@ class HomeScreen: UIView {
         NSLayoutConstraint.activate([
             infoStackView.topAnchor.constraint(equalTo: temperatureLabel.topAnchor, constant: 5),
             infoStackView.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            chartView.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 20),
+            chartView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
+            chartView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            chartView.heightAnchor.constraint(equalToConstant: 120),
+            chartView.widthAnchor.constraint(equalToConstant: 400)
         ])
     }
 }
