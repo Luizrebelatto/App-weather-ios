@@ -27,6 +27,16 @@ class HomeScreen: UIView {
         return img
     }()
     
+    private lazy var temperatureLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "54"
+        label.textColor = UIColor.blueDark
+        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.textAlignment = .left
+        return label
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -59,6 +69,7 @@ class HomeScreen: UIView {
     private func setHierarchy() {
         addSubview(cityLabel)
         addSubview(imageWeather)
+        addSubview(temperatureLabel)
     }
         
     private func configConstraints(){
@@ -72,6 +83,11 @@ class HomeScreen: UIView {
             imageWeather.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             imageWeather.heightAnchor.constraint(equalToConstant: 200),
             imageWeather.widthAnchor.constraint(equalToConstant: 200)
+        ])
+        
+        NSLayoutConstraint.activate([
+            temperatureLabel.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 25),
+            temperatureLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
     }
 }
