@@ -16,4 +16,5 @@ extension UIColor {
     static let blueSoft = UIColor(named: "softBlue")
     static let blueMedium = UIColor(named: "mediumBlue")
     static let blueDark = UIColor(named: "darkBlue")
+    static let opacityBlueCard = UIColor(named: "opacityBlue")
 }

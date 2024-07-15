@@ -68,6 +68,34 @@ class HomeScreen: UIView {
         return stackView
     }()
     
+    private lazy var cardTemperature: UIView = {
+        let card = UIView()
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.clipsToBounds = true
+        card.layer.cornerRadius = 20
+        card.backgroundColor = UIColor.opacityBlueCard
+        return card
+    }()
+    
+    private lazy var allCardTemperatures: UIView = {
+        let card = UIView()
+        card.translatesAutoresizingMaskIntoConstraints = false
+        card.clipsToBounds = true
+        card.layer.cornerRadius = 20
+        card.backgroundColor = UIColor.opacityBlueCard
+        return card
+    }()
+    
+    private lazy var titleCard: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.blueDark
+        label.text = "HOJE"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        return label
+    }()
+    
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -85,7 +113,7 @@ class HomeScreen: UIView {
         let chartsView = UIView()
         chartsView.translatesAutoresizingMaskIntoConstraints = false
         chartsView.clipsToBounds = true
-        chartsView.backgroundColor = UIColor.blueDark
+        chartsView.backgroundColor = UIColor.mediumBlue
         chartsView.layer.cornerRadius = 20
         return chartsView
     }()
@@ -111,6 +139,8 @@ class HomeScreen: UIView {
         addSubview(imageWeather)
         addSubview(temperatureLabel)
         addSubview(infoStackView)
+        addSubview(cardTemperature)
+        addSubview(allCardTemperatures)
         addSubview(chartView)
     }
         
@@ -121,14 +151,14 @@ class HomeScreen: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            imageWeather.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 25),
+            imageWeather.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 75),
             imageWeather.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
             imageWeather.heightAnchor.constraint(equalToConstant: 200),
             imageWeather.widthAnchor.constraint(equalToConstant: 200)
         ])
         
         NSLayoutConstraint.activate([
-            temperatureLabel.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 25),
+            temperatureLabel.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 50),
             temperatureLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
@@ -138,9 +168,23 @@ class HomeScreen: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            chartView.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 20),
-            chartView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 15),
-            chartView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            cardTemperature.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 40),
+            cardTemperature.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            cardTemperature.heightAnchor.constraint(equalToConstant: 140),
+            cardTemperature.widthAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            allCardTemperatures.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 40),
+            allCardTemperatures.leadingAnchor.constraint(equalTo: cardTemperature.leadingAnchor, constant: 120),
+            allCardTemperatures.heightAnchor.constraint(equalToConstant: 140),
+            allCardTemperatures.widthAnchor.constraint(equalToConstant: 260)
+        ])
+        
+        NSLayoutConstraint.activate([
+            chartView.topAnchor.constraint(equalTo: cardTemperature.bottomAnchor, constant: 40),
+            chartView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            chartView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             chartView.heightAnchor.constraint(equalToConstant: 120),
             chartView.widthAnchor.constraint(equalToConstant: 400)
         ])
