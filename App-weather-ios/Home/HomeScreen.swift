@@ -12,7 +12,7 @@ class HomeScreen: UIView {
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Porto Alegre"
+        label.text = "Cachoeirinha"
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.textColor = UIColor.blueDark
         label.textAlignment = .center
@@ -40,7 +40,7 @@ class HomeScreen: UIView {
     private lazy var eventWeather: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Storm"
+        label.text = "Sol"
         label.textColor = UIColor.blueDark
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .left
@@ -67,16 +67,7 @@ class HomeScreen: UIView {
         stackView.spacing = 4
         return stackView
     }()
-    
-    private lazy var cardTemperature: UIView = {
-        let card = UIView()
-        card.translatesAutoresizingMaskIntoConstraints = false
-        card.clipsToBounds = true
-        card.layer.cornerRadius = 20
-        card.backgroundColor = UIColor.opacityBlueCard
-        return card
-    }()
-    
+        
     private lazy var allCardTemperatures: UIView = {
         let card = UIView()
         card.translatesAutoresizingMaskIntoConstraints = false
@@ -92,8 +83,50 @@ class HomeScreen: UIView {
         label.textColor = UIColor.blueDark
         label.text = "HOJE"
         label.textAlignment = .center
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return label
+    }()
+    
+    private lazy var weatherTitleValue: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.blueDark
+        label.text = "46º / 50º"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        return label
+    }()
+    
+    private lazy var weatherTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.blueDark
+        label.text = "Ensolarado"
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        return label
+    }()
+    
+    private lazy var weatherIconCard: UIImageView = {
+        let img = UIImageView()
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.image = UIImage.sunIconImage
+        img.contentMode = .scaleAspectFit
+        return img
+    }()
+    
+    private lazy var cardTemperature: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleCard, weatherIconCard, weatherTitleValue, weatherTitle])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.backgroundColor = UIColor.opacityBlueCard
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 10, trailing: 0)
+        stackView.spacing = 2
+        stackView.clipsToBounds = true
+        stackView.layer.cornerRadius = 20
+        return stackView
     }()
     
     private lazy var collectionView: UICollectionView = {
@@ -187,6 +220,11 @@ class HomeScreen: UIView {
             chartView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
             chartView.heightAnchor.constraint(equalToConstant: 120),
             chartView.widthAnchor.constraint(equalToConstant: 400)
+        ])
+        
+        NSLayoutConstraint.activate([
+            weatherIconCard.heightAnchor.constraint(equalToConstant: 50),
+            weatherIconCard.widthAnchor.constraint(equalToConstant: 40),
         ])
     }
 }
