@@ -138,6 +138,7 @@ class HomeScreen: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isScrollEnabled = false
         collectionView.register(HourlyForecastCardCollectionViewCell.self, forCellWithReuseIdentifier: HourlyForecastCardCollectionViewCell.identifier)
         return collectionView
     }()
@@ -174,6 +175,7 @@ class HomeScreen: UIView {
         addSubview(infoStackView)
         addSubview(cardTemperature)
         addSubview(allCardTemperatures)
+        allCardTemperatures.addSubview(collectionView)
         addSubview(chartView)
     }
         
@@ -211,7 +213,7 @@ class HomeScreen: UIView {
             allCardTemperatures.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 40),
             allCardTemperatures.leadingAnchor.constraint(equalTo: cardTemperature.leadingAnchor, constant: 120),
             allCardTemperatures.heightAnchor.constraint(equalToConstant: 140),
-            allCardTemperatures.widthAnchor.constraint(equalToConstant: 260)
+            allCardTemperatures.widthAnchor.constraint(equalToConstant: 270)
         ])
         
         NSLayoutConstraint.activate([
@@ -225,6 +227,13 @@ class HomeScreen: UIView {
         NSLayoutConstraint.activate([
             weatherIconCard.heightAnchor.constraint(equalToConstant: 50),
             weatherIconCard.widthAnchor.constraint(equalToConstant: 40),
+        ])
+        
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: allCardTemperatures.topAnchor, constant: 5),
+            collectionView.leadingAnchor.constraint(equalTo: allCardTemperatures.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: allCardTemperatures.trailingAnchor),
+            collectionView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
 }

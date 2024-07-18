@@ -9,35 +9,35 @@ import UIKit
 
 class HourlyForecastScreenViewCell: UIView {
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [hourLabel, iconImageView, temperatureLabel])
+        let stackView = UIStackView(arrangedSubviews: [iconImageView, temperatureLabel, eventLabel])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 4
+        stackView.spacing = 2
         stackView.layer.borderWidth = 1
         stackView.backgroundColor = .clear
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 10, leading: 2, bottom: 10, trailing: 2)
-        stackView.layer.borderColor = UIColor.lightColor?.cgColor
+        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0)
+        stackView.layer.borderColor = UIColor.mediumBlue.cgColor
         stackView.layer.cornerRadius = 20
         stackView.clipsToBounds = true
         return stackView
     }()
     
-    lazy var hourLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.lightColor
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
-        return label
-    }()
-    
     lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = UIColor.lightColor
+        label.textColor = UIColor.darkBlue
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        return label
+    }()
+    
+    lazy var eventLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = UIColor.darkBlue
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
         return label
     }()
     

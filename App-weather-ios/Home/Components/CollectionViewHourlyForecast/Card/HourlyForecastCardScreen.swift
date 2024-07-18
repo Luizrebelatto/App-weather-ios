@@ -48,8 +48,8 @@ class HourlyForecastCardScreen: UIView {
     
     private func configConstraints() {
             NSLayoutConstraint.activate([
-                cardView.widthAnchor.constraint(equalToConstant: 450),
-                cardView.heightAnchor.constraint(equalToConstant: 100),
+                cardView.widthAnchor.constraint(equalToConstant: 400),
+                cardView.heightAnchor.constraint(equalToConstant: 120),
             ])
         }
 }
