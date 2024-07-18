@@ -8,7 +8,7 @@
 import Foundation
 
 struct HourlyForecasts {
-    let hour: String
+    let eventLabel: String
     let temperature: String
     let iconForecast: String
 }

@@ -28,8 +28,8 @@ class HourlyForecastCollectionCell: UICollectionViewCell {
     }
     
     public func setupCell(data: HourlyForecasts, indexPath: IndexPath){
-        screen.eventLabel.text = "Ensolarado"
-        screen.temperatureLabel.text = "12° / 12°"
+        screen.eventLabel.text = data.eventLabel
+        screen.temperatureLabel.text = data.temperature
         screen.iconImageView.image = UIImage(named: data.iconForecast)
     }
 }

@@ -9,16 +9,16 @@ import UIKit
 
 class HomeViewModel {
     private var hourlyCasts = [
-        HourlyForecasts(hour: "23 C", temperature: "14 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "15 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "16 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "17 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "18 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "19 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "20 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "21 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "22 C", iconForecast: "sunIcon"),
-        HourlyForecasts(hour: "23 C", temperature: "23 C", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Sol", temperature: "12° / 12°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Chuva", temperature: "12° / 33°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Neve", temperature: "22° / 32°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Sol", temperature: "12° / 13°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Chuva", temperature: "11° / 19°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Nublado", temperature: "12° / 12°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Temporal", temperature: "12° / 12°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Chuva", temperature: "12° / 12°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Sol", temperature: "12° / 12°", iconForecast: "sunIcon"),
+        HourlyForecasts(eventLabel: "Sol", temperature: "12° / 12°", iconForecast: "sunIcon"),
     ]
     
     public var getListHourly: [HourlyForecasts] {
