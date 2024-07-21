@@ -8,11 +8,15 @@
 import UIKit
 
 class CardToday: UIStackView {
+    var viewModel: CardTodayViewModelProtocol? {
+        didSet {
+            setDataBind()
+        }
+    }
     private lazy var titleCard: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.blueDark
-        label.text = "Today"
         label.textAlignment = .center
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
@@ -23,7 +27,6 @@ class CardToday: UIStackView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.blueDark
-        label.text = "26º / 30º"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
@@ -33,7 +36,6 @@ class CardToday: UIStackView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = UIColor.blueDark
-        label.text = "Chuva"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         return label
@@ -67,10 +69,7 @@ class CardToday: UIStackView {
         clipsToBounds = true
         layer.cornerRadius = 20
         
-        NSLayoutConstraint.activate([
-            weatherIconCard.heightAnchor.constraint(equalToConstant: 50),
-            weatherIconCard.widthAnchor.constraint(equalToConstant: 40),
-        ])
+        setConstraints()
     }
     
     private func setHierarchy(){
@@ -78,5 +77,20 @@ class CardToday: UIStackView {
         addArrangedSubview(weatherIconCard)
         addArrangedSubview(weatherTitleValue)
         addArrangedSubview(weatherTitle)
+    }
+    
+    private func setConstraints() {
+        NSLayoutConstraint.activate([
+            weatherIconCard.heightAnchor.constraint(equalToConstant: 50),
+            weatherIconCard.widthAnchor.constraint(equalToConstant: 40),
+        ])
+    }
+    
+    private func setDataBind() {
+        guard let viewModel = viewModel else { return }
+        titleCard.text = viewModel.titleText
+        weatherTitle.text = viewModel.weatherText
+        weatherTitleValue.text = viewModel.temperatureText
+        weatherIconCard.image = viewModel.iconImage
     }
 }

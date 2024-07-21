@@ -78,8 +78,9 @@ class HomeScreen: UIView {
     }()
     
     private lazy var cardTemperature: UIStackView = {
-        let stackView = CardToday(frame: .zero)
-        return stackView
+        let cardToday = CardToday(frame: .zero)
+        cardToday.viewModel = CardTodayViewModel()
+        return cardToday
     }()
     
     private lazy var collectionView: UICollectionView = {
