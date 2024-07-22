@@ -19,6 +19,7 @@
 		292B2F672C494B5E009740A1 /* CardToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B2F662C494B5E009740A1 /* CardToday.swift */; };
 		292B2F692C49630A009740A1 /* WeatherToday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B2F682C49630A009740A1 /* WeatherToday.swift */; };
 		292B2F6B2C496494009740A1 /* CardTodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B2F6A2C496494009740A1 /* CardTodayViewModel.swift */; };
+		292B2F6E2C4D9099009740A1 /* LineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B2F6D2C4D9099009740A1 /* LineChartView.swift */; };
 		29662C582C224B1C00E5A216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29662C572C224B1C00E5A216 /* AppDelegate.swift */; };
 		29662C5A2C224B1C00E5A216 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29662C592C224B1C00E5A216 /* SceneDelegate.swift */; };
 		29662C612C224B1E00E5A216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29662C602C224B1E00E5A216 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		292B2F662C494B5E009740A1 /* CardToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardToday.swift; sourceTree = "<group>"; };
 		292B2F682C49630A009740A1 /* WeatherToday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherToday.swift; sourceTree = "<group>"; };
 		292B2F6A2C496494009740A1 /* CardTodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTodayViewModel.swift; sourceTree = "<group>"; };
+		292B2F6D2C4D9099009740A1 /* LineChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartView.swift; sourceTree = "<group>"; };
 		29662C542C224B1C00E5A216 /* App-weather-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App-weather-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29662C572C224B1C00E5A216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29662C592C224B1C00E5A216 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		290F98EC2C2C4F4400064DD9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				292B2F6C2C4D907D009740A1 /* LineCharts */,
 				292B2F652C494AFD009740A1 /* CardToday */,
 				290F98ED2C2C4F6200064DD9 /* CollectionViewHourlyForecast */,
 			);
@@ -128,6 +131,14 @@
 				292B2F6A2C496494009740A1 /* CardTodayViewModel.swift */,
 			);
 			path = CardToday;
+			sourceTree = "<group>";
+		};
+		292B2F6C2C4D907D009740A1 /* LineCharts */ = {
+			isa = PBXGroup;
+			children = (
+				292B2F6D2C4D9099009740A1 /* LineChartView.swift */,
+			);
+			path = LineCharts;
 			sourceTree = "<group>";
 		};
 		29662C4B2C224B1C00E5A216 = {
@@ -246,6 +257,7 @@
 				297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */,
 				290F98F72C2CCD6A00064DD9 /* HourlyForecastScreenViewCell.swift in Sources */,
 				290F98FD2C341E8D00064DD9 /* HomeViewController.swift in Sources */,
+				292B2F6E2C4D9099009740A1 /* LineChartView.swift in Sources */,
 				292B2F672C494B5E009740A1 /* CardToday.swift in Sources */,
 				290F98E92C2C4A0100064DD9 /* HourlyForecasts.swift in Sources */,
 				290F98FB2C32F0BE00064DD9 /* HomeScreen.swift in Sources */,

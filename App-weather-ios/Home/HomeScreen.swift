@@ -8,7 +8,6 @@
 import UIKit
 
 class HomeScreen: UIView {
-    
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -97,13 +96,38 @@ class HomeScreen: UIView {
         return collectionView
     }()
     
-    private lazy var chartView: UIView = {
-        let chartsView = UIView()
-        chartsView.translatesAutoresizingMaskIntoConstraints = false
-        chartsView.clipsToBounds = true
-        chartsView.backgroundColor = UIColor.mediumBlue
-        chartsView.layer.cornerRadius = 20
-        return chartsView
+    private lazy var chartContainerView: UIView = {
+        let containerView = UIView()
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        containerView.backgroundColor = UIColor.clear
+        containerView.layer.cornerRadius = 20
+        containerView.clipsToBounds = true
+        return containerView
+    }()
+    
+    private lazy var chartView: LineChartView = {
+        let chart = LineChartView()
+        chart.translatesAutoresizingMaskIntoConstraints = false
+        chart.backgroundColor = UIColor.mediumBlue
+        chart.layer.cornerRadius = 20
+        chart.clipsToBounds = true
+        return chart
+    }()
+    
+    private lazy var chartScrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.backgroundColor = .clear
+        return scrollView
+    }()
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsHorizontalScrollIndicator = false
+        scrollView.backgroundColor = .clear
+        return scrollView
     }()
     
     override init(frame: CGRect) {
@@ -111,6 +135,7 @@ class HomeScreen: UIView {
         backgroundColor = .softBlue
         setHierarchy()
         configConstraints()
+        setupChart()
     }
     
     required init?(coder: NSCoder) {
@@ -130,7 +155,9 @@ class HomeScreen: UIView {
         addSubview(cardTemperature)
         addSubview(allCardTemperatures)
         allCardTemperatures.addSubview(collectionView)
-        addSubview(chartView)
+        addSubview(chartContainerView)
+        chartContainerView.addSubview(chartScrollView)
+        chartScrollView.addSubview(chartView)
     }
         
     private func configConstraints(){
@@ -171,11 +198,27 @@ class HomeScreen: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            chartView.topAnchor.constraint(equalTo: cardTemperature.bottomAnchor, constant: 40),
-            chartView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            chartView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
-            chartView.heightAnchor.constraint(equalToConstant: 120),
-            chartView.widthAnchor.constraint(equalToConstant: 400)
+            chartContainerView.topAnchor.constraint(equalTo: cardTemperature.bottomAnchor, constant: 40),
+            chartContainerView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            chartContainerView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            chartContainerView.heightAnchor.constraint(equalToConstant: 120),
+        ])
+                
+        NSLayoutConstraint.activate([
+            chartScrollView.topAnchor.constraint(equalTo: chartContainerView.topAnchor),
+            chartScrollView.leadingAnchor.constraint(equalTo: chartContainerView.leadingAnchor),
+            chartScrollView.trailingAnchor.constraint(equalTo: chartContainerView.trailingAnchor),
+            chartScrollView.bottomAnchor.constraint(equalTo: chartContainerView.bottomAnchor)
+        ])
+                
+        NSLayoutConstraint.activate([
+            chartView.topAnchor.constraint(equalTo: chartScrollView.topAnchor),
+            chartView.leadingAnchor.constraint(equalTo: chartScrollView.leadingAnchor),
+            chartView.trailingAnchor.constraint(equalTo: chartScrollView.trailingAnchor),
+            chartView.bottomAnchor.constraint(equalTo: chartScrollView.bottomAnchor),
+            chartView.heightAnchor.constraint(equalTo: chartScrollView.heightAnchor),
+            chartView.widthAnchor.constraint(equalToConstant: 1000) 
+            
         ])
         
         NSLayoutConstraint.activate([
@@ -184,5 +227,10 @@ class HomeScreen: UIView {
             collectionView.trailingAnchor.constraint(equalTo: allCardTemperatures.trailingAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: 250)
         ])
+    }
+    
+    private func setupChart() {
+        let graphicData: [CGFloat] = [30, 50, 70, 40, 60, 80, 50, 80, 30, 20, 30, 50, 70, 40, 60, 80, 50, 80, 30, 20]
+        chartView.data = graphicData
     }
 }
