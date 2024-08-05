@@ -26,44 +26,9 @@ class HomeScreen: UIView {
         return img
     }()
     
-    private lazy var temperatureLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "54°C"
-        label.textColor = UIColor.blueDark
-        label.font = UIFont.systemFont(ofSize: 60, weight: .bold)
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private lazy var eventWeather: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sol"
-        label.textColor = UIColor.blueDark
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textAlignment = .left
-        return label
-    }()
-    
-    private lazy var infoWeather: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "H: 12°C | L: 14°C"
-        label.textColor = UIColor.blueDark
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textAlignment = .left
-        return label
-    }()
-    
     private lazy var infoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [eventWeather, infoWeather])
+        let stackView = InfoWeather()
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.backgroundColor = .clear
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8)
-        stackView.spacing = 4
         return stackView
     }()
         
@@ -150,7 +115,6 @@ class HomeScreen: UIView {
     private func setHierarchy() {
         addSubview(cityLabel)
         addSubview(imageWeather)
-        addSubview(temperatureLabel)
         addSubview(infoStackView)
         addSubview(cardTemperature)
         addSubview(allCardTemperatures)
@@ -174,13 +138,8 @@ class HomeScreen: UIView {
         ])
         
         NSLayoutConstraint.activate([
-            temperatureLabel.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 50),
-            temperatureLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
-        ])
-        
-        NSLayoutConstraint.activate([
-            infoStackView.topAnchor.constraint(equalTo: temperatureLabel.topAnchor, constant: 5),
-            infoStackView.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: 20)
+            infoStackView.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 20),
+            infoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
