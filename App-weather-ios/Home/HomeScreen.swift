@@ -9,8 +9,9 @@ import UIKit
 
 class HomeScreen: UIView {    
     private lazy var Header: UIStackView = {
-        let stackview = HeaderContent()
-        return stackview
+        let headerContent = HeaderContent()
+        headerContent.viewModel = HeaderContentViewModel()
+        return headerContent
     }()
     
     private lazy var infoStackView: UIStackView = {

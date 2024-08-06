@@ -13,6 +13,7 @@ class CardToday: UIStackView {
             setDataBind()
         }
     }
+    
     private lazy var titleCard: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

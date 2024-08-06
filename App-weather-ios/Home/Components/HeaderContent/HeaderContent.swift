@@ -8,6 +8,12 @@
 import UIKit
 
 class HeaderContent: UIStackView {
+    var viewModel: HeaderContentViewModelProtocol? {
+        didSet {
+            setDataBind()
+        }
+    }
+    
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +24,7 @@ class HeaderContent: UIStackView {
         return label
     }()
     
-    private lazy var imageWeather: UIView = {
+    private lazy var imageWeather: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
         img.image = UIImage.sunIconImage
@@ -61,5 +67,11 @@ class HeaderContent: UIStackView {
             imageWeather.widthAnchor.constraint(equalToConstant: 250),
             imageWeather.heightAnchor.constraint(equalToConstant: 250)
         ])
+    }
+    
+    private func setDataBind() {
+        guard let viewModel = viewModel else { return }
+        cityLabel.text = viewModel.titleCity
+        imageWeather.image = viewModel.iconImage
     }
 }

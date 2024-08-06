@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    static let backgroundImage = UIImage(named: "background")
-    static let sunIconImage = UIImage(named: "sunIcon")
-    static let cloudIconImage = UIImage(named: "cloudIcon")
+    static let backgroundImage = UIImage(named: "background") ?? UIImage()
+    static let sunIconImage = UIImage(named: "sunIcon") ?? UIImage()
+    static let cloudIconImage = UIImage(named: "cloudIcon") ?? UIImage()
 }
