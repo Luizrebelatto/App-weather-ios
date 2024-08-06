@@ -15,9 +15,9 @@ class HomeScreen: UIView {
     }()
     
     private lazy var infoStackView: UIStackView = {
-        let stackView = InfoWeather()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
+        let infoWeather = InfoWeather()
+        infoWeather.viewModel = InfoWeatherViewModel()
+        return infoWeather
     }()
         
     private lazy var allCardTemperatures: UIView = {

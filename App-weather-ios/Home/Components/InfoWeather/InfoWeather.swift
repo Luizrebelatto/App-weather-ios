@@ -8,10 +8,15 @@
 import UIKit
 
 class InfoWeather: UIStackView {
+    var viewModel: InfoWeatherViewModelProtocol? {
+        didSet {
+            setDataBind()
+        }
+    }
+    
     private lazy var temperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "54°C"
         label.textColor = UIColor.blueDark
         label.font = UIFont.systemFont(ofSize: 60, weight: .bold)
         label.textAlignment = .left
@@ -21,7 +26,6 @@ class InfoWeather: UIStackView {
     private lazy var eventLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Chuva"
         label.textColor = UIColor.blueDark
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .left
@@ -31,7 +35,6 @@ class InfoWeather: UIStackView {
     private lazy var weatherLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "H: 13°C | L: 15°C"
         label.textColor = UIColor.blueDark
         label.font = UIFont.systemFont(ofSize: 18)
         label.textAlignment = .left
@@ -80,4 +83,12 @@ class InfoWeather: UIStackView {
             temperatureLabel.trailingAnchor.constraint(equalTo: contentWeatherStackView.leadingAnchor, constant: -20)
         ])
     }
+    
+    private func setDataBind() {
+        guard let viewModel = viewModel else { return }
+        temperatureLabel.text = viewModel.titleTemperature
+        eventLabel.text = viewModel.titleEvent
+        weatherLabel.text = viewModel.weatherTitle
+    }
 }
+

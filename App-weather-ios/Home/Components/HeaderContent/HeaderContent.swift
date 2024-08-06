@@ -17,7 +17,6 @@ class HeaderContent: UIStackView {
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cachoeirinha"
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.textColor = UIColor.blueDark
         label.textAlignment = .center
@@ -27,7 +26,6 @@ class HeaderContent: UIStackView {
     private lazy var imageWeather: UIImageView = {
         let img = UIImageView()
         img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage.sunIconImage
         img.contentMode = .scaleAspectFit
         return img
     }()

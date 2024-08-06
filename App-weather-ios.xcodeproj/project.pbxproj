@@ -31,6 +31,7 @@
 		29B5A0D62C60E5D600A3FAC7 /* HeaderContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B5A0D52C60E5D600A3FAC7 /* HeaderContent.swift */; };
 		29CC182E2C389A78009D5392 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CC182D2C389A78009D5392 /* HomeViewModel.swift */; };
 		29EDC2D42C624D4B00F39582 /* HeaderContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDC2D32C624D4B00F39582 /* HeaderContentViewModel.swift */; };
+		29EDC2D62C62615F00F39582 /* InfoWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDC2D52C62615F00F39582 /* InfoWeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		29B5A0D52C60E5D600A3FAC7 /* HeaderContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContent.swift; sourceTree = "<group>"; };
 		29CC182D2C389A78009D5392 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		29EDC2D32C624D4B00F39582 /* HeaderContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContentViewModel.swift; sourceTree = "<group>"; };
+		29EDC2D52C62615F00F39582 /* InfoWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				29B5A0D22C60667B00A3FAC7 /* InfoWeather.swift */,
+				29EDC2D52C62615F00F39582 /* InfoWeatherViewModel.swift */,
 			);
 			path = InfoWeather;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				292B2F6E2C4D9099009740A1 /* LineChartView.swift in Sources */,
 				29EDC2D42C624D4B00F39582 /* HeaderContentViewModel.swift in Sources */,
 				292B2F672C494B5E009740A1 /* CardToday.swift in Sources */,
+				29EDC2D62C62615F00F39582 /* InfoWeatherViewModel.swift in Sources */,
 				290F98E92C2C4A0100064DD9 /* HourlyForecasts.swift in Sources */,
 				290F98FB2C32F0BE00064DD9 /* HomeScreen.swift in Sources */,
 				290F98F22C2C505200064DD9 /* HourlyForecastCardScreen.swift in Sources */,
