@@ -7,23 +7,10 @@
 
 import UIKit
 
-class HomeScreen: UIView {
-    private lazy var cityLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cachoeirinha"
-        label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-        label.textColor = UIColor.blueDark
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private lazy var imageWeather: UIView = {
-        let img = UIImageView()
-        img.translatesAutoresizingMaskIntoConstraints = false
-        img.image = UIImage.sunIconImage
-        img.contentMode = .scaleAspectFit
-        return img
+class HomeScreen: UIView {    
+    private lazy var Header: UIStackView = {
+        let stackview = HeaderContent()
+        return stackview
     }()
     
     private lazy var infoStackView: UIStackView = {
@@ -113,8 +100,7 @@ class HomeScreen: UIView {
     }
     
     private func setHierarchy() {
-        addSubview(cityLabel)
-        addSubview(imageWeather)
+        addSubview(Header)
         addSubview(infoStackView)
         addSubview(cardTemperature)
         addSubview(allCardTemperatures)
@@ -126,31 +112,24 @@ class HomeScreen: UIView {
         
     private func configConstraints(){
         NSLayoutConstraint.activate([
-            cityLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 30),
-            cityLabel.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor)
+            Header.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            Header.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
         ])
         
         NSLayoutConstraint.activate([
-            imageWeather.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 75),
-            imageWeather.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            imageWeather.heightAnchor.constraint(equalToConstant: 200),
-            imageWeather.widthAnchor.constraint(equalToConstant: 200)
-        ])
-        
-        NSLayoutConstraint.activate([
-            infoStackView.topAnchor.constraint(equalTo: imageWeather.bottomAnchor, constant: 20),
+            infoStackView.topAnchor.constraint(equalTo: Header.bottomAnchor, constant: 20),
             infoStackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
         NSLayoutConstraint.activate([
-            cardTemperature.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 40),
+            cardTemperature.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 20),
             cardTemperature.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
             cardTemperature.heightAnchor.constraint(equalToConstant: 140),
             cardTemperature.widthAnchor.constraint(equalToConstant: 100)
         ])
         
         NSLayoutConstraint.activate([
-            allCardTemperatures.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 40),
+            allCardTemperatures.topAnchor.constraint(equalTo: infoStackView.bottomAnchor, constant: 20),
             allCardTemperatures.leadingAnchor.constraint(equalTo: cardTemperature.leadingAnchor, constant: 120),
             allCardTemperatures.heightAnchor.constraint(equalToConstant: 140),
             allCardTemperatures.widthAnchor.constraint(equalToConstant: 270)
