@@ -44,7 +44,7 @@ class HeaderContent: UIStackView {
         axis = .vertical
         backgroundColor = .clear
         isLayoutMarginsRelativeArrangement = true
-        spacing = 80
+        spacing = 60
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 20, trailing: 0)
         
         setHierarchy()
@@ -62,8 +62,8 @@ class HeaderContent: UIStackView {
             cityLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             cityLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
                 
-            imageWeather.widthAnchor.constraint(equalToConstant: 250),
-            imageWeather.heightAnchor.constraint(equalToConstant: 250)
+            imageWeather.widthAnchor.constraint(equalToConstant: 200),
+            imageWeather.heightAnchor.constraint(equalToConstant: 200)
         ])
     }
     

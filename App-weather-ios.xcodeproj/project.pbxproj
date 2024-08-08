@@ -232,7 +232,6 @@
 				99E2A9DF89D873A66BCF1A0E /* Pods-App-weather-ios.debug.xcconfig */,
 				AAB36F4775601AADFBA177C2 /* Pods-App-weather-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -247,6 +246,7 @@
 				29662C502C224B1C00E5A216 /* Sources */,
 				29662C512C224B1C00E5A216 /* Frameworks */,
 				29662C522C224B1C00E5A216 /* Resources */,
+				29EDC2E02C6531CC00F39582 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -304,6 +304,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		29EDC2E02C6531CC00F39582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "${PODS_ROOT}/SwiftLint/swiftlint";
+			shellScript = "if which swiftlint >/dev/null; then\n  \"$ {PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		D9C8416754F46D46C23F8263 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
