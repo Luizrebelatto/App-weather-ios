@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		290848912C2608F5005571AC /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290848902C2608F5005571AC /* Color+Extension.swift */; };
+		290896DD2C6EEEF9009B10C2 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290896DC2C6EEEF9009B10C2 /* CurrentWeather.swift */; };
 		290F98E92C2C4A0100064DD9 /* HourlyForecasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F98E82C2C4A0100064DD9 /* HourlyForecasts.swift */; };
 		290F98F02C2C4FA700064DD9 /* HourlyForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F98EF2C2C4FA700064DD9 /* HourlyForecastViewModel.swift */; };
 		290F98F22C2C505200064DD9 /* HourlyForecastCardScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290F98F12C2C505200064DD9 /* HourlyForecastCardScreen.swift */; };
@@ -32,11 +33,13 @@
 		29CC182E2C389A78009D5392 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29CC182D2C389A78009D5392 /* HomeViewModel.swift */; };
 		29EDC2D42C624D4B00F39582 /* HeaderContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDC2D32C624D4B00F39582 /* HeaderContentViewModel.swift */; };
 		29EDC2D62C62615F00F39582 /* InfoWeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EDC2D52C62615F00F39582 /* InfoWeatherViewModel.swift */; };
+		29F5AE172C6D6A5B00440BCD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29F5AE162C6D6A5B00440BCD /* Service.swift */; };
 		774147C370DB6FA74624CBC1 /* Pods_App_weather_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E10ABE3DAA4B5292A6CDA662 /* Pods_App_weather_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		290848902C2608F5005571AC /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		290896DC2C6EEEF9009B10C2 /* CurrentWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
 		290F98E82C2C4A0100064DD9 /* HourlyForecasts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecasts.swift; sourceTree = "<group>"; };
 		290F98EF2C2C4FA700064DD9 /* HourlyForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastViewModel.swift; sourceTree = "<group>"; };
 		290F98F12C2C505200064DD9 /* HourlyForecastCardScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyForecastCardScreen.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		29CC182D2C389A78009D5392 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		29EDC2D32C624D4B00F39582 /* HeaderContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderContentViewModel.swift; sourceTree = "<group>"; };
 		29EDC2D52C62615F00F39582 /* InfoWeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWeatherViewModel.swift; sourceTree = "<group>"; };
+		29F5AE162C6D6A5B00440BCD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		99E2A9DF89D873A66BCF1A0E /* Pods-App-weather-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-weather-ios.debug.xcconfig"; path = "Target Support Files/Pods-App-weather-ios/Pods-App-weather-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		AAB36F4775601AADFBA177C2 /* Pods-App-weather-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-App-weather-ios.release.xcconfig"; path = "Target Support Files/Pods-App-weather-ios/Pods-App-weather-ios.release.xcconfig"; sourceTree = "<group>"; };
 		E10ABE3DAA4B5292A6CDA662 /* Pods_App_weather_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_App_weather_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		290896DB2C6EEED5009B10C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				29F5AE162C6D6A5B00440BCD /* Service.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		290F98E62C2C48A400064DD9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +115,7 @@
 			children = (
 				290F98E82C2C4A0100064DD9 /* HourlyForecasts.swift */,
 				292B2F682C49630A009740A1 /* WeatherToday.swift */,
+				290896DC2C6EEEF9009B10C2 /* CurrentWeather.swift */,
 			);
 			name = Models;
 			path = "App-weather-ios/Models";
@@ -186,6 +199,7 @@
 		29662C562C224B1C00E5A216 /* App-weather-ios */ = {
 			isa = PBXGroup;
 			children = (
+				290896DB2C6EEED5009B10C2 /* Services */,
 				297BD59F2C27B67A0029989A /* Extensions */,
 				290F98E72C2C499500064DD9 /* Models */,
 				290F98E62C2C48A400064DD9 /* Home */,
@@ -351,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				292B2F6B2C496494009740A1 /* CardTodayViewModel.swift in Sources */,
+				29F5AE172C6D6A5B00440BCD /* Service.swift in Sources */,
 				29CC182E2C389A78009D5392 /* HomeViewModel.swift in Sources */,
 				297BD59E2C2733E00029989A /* UIView+Extension.swift in Sources */,
 				290F98F72C2CCD6A00064DD9 /* HourlyForecastScreenViewCell.swift in Sources */,
@@ -368,6 +383,7 @@
 				297BD5A12C27B89E0029989A /* UIImage+Extension.swift in Sources */,
 				29B5A0D62C60E5D600A3FAC7 /* HeaderContent.swift in Sources */,
 				29662C582C224B1C00E5A216 /* AppDelegate.swift in Sources */,
+				290896DD2C6EEEF9009B10C2 /* CurrentWeather.swift in Sources */,
 				290F98F42C2C5DDA00064DD9 /* HourlyForecastCardCollectionViewCell.swift in Sources */,
 				290F98F92C2CFF7F00064DD9 /* HourlyForecastCollectionCell.swift in Sources */,
 				292B2F692C49630A009740A1 /* WeatherToday.swift in Sources */,

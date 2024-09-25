@@ -16,10 +16,16 @@ class HomeViewController: UIViewController {
         homeScreen = HomeScreen()
         view = homeScreen
     }
-
+    
+    private let service = Service()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         homeScreen?.configProtocolsColletionView(delegate: self, dataSource: self)
+        
+        Service().currentWeatherData(city: "cachoeirinha") { message in
+            print("Mensagem retorno api: \(message)")
+        }
     }
 }
 
